@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,500;0,700;1,400&display=swap"
+      rel="stylesheet"
+    />
+    <title>La Padarie</title>
+  </head>
+  <body>
+    <div id="modal">
+      <form name="form">
+        <div id="initDiv">
+          <p>Adicionar pessoa à fila</p>
+          <div id="inputDiv">
+            <input
+              required
+              type="text"
+              name="nameInput"
+              id="nameInput"
+              placeholder="Nome completo do cliente"
+            />
+            <input
+              required
+              type="number"
+              name="totBreadInput"
+              id="totBreadInput"
+              placeholder="Total de pães"
+            />
+          </div>
+        </div>
+        <div id="buttonDiv">
+          <button type="submit">Enviar</button>
+          <button onclick="closeModal()" type="reset">Cancelar</button>
+        </div>
+      </form>
+    </div>
+    <div id="editModal">
+      <form name="editForm">
+        <div id="initDiv">
+          <p>Edite as informações do cliente:</p>
+          <div id="inputDiv">
+            <input
+              required
+              type="text"
+              name="editNameInput"
+              id="editNameInput"
+              placeholder="Novo nome completo"
+            />
+            <input
+              required
+              type="number"
+              name="editTotBreadInput"
+              id="editTotBreadInput"
+              placeholder="Novo total de pães"
+            />
+          </div>
+        </div>
+        <div id="buttonDiv">
+          <button id="editButton" type="submit">Salvar</button>
+          <button onclick="closeEditModal()" type="reset">Cancelar</button>
+        </div>
+      </form>
+    </div>
+    <header>
+      <img src="../../assets/Logo.svg" alt="La Padarie's Logo" />
+      <div id="headerBackgroundDiv"></div>
+    </header>
+    <main>
+      <section id="cardSection">
+        <div class="infoCard">
+          <div class="infoCardIntroDiv">
+            <p>Pessoas na fila:</p>
+            <img src="../../assets/people-icon.svg" alt="" />
+          </div>
+          <p class="cardInfoText" id="totalClients">0</p>
+        </div>
+        <div class="infoCard">
+          <div class="infoCardIntroDiv">
+            <p>Pães vendidos:</p>
+            <img src="../../assets/cart-icon.svg" alt="" />
+          </div>
+          <p class="cardInfoText" id="totalBread">0</p>
+        </div>
+        <div class="infoCard" id="incomeCard">
+          <div class="infoCardIntroDiv">
+            <p>Entrada:</p>
+            <img src="../../assets/money-icon.svg" alt="" />
+          </div>
+          <p class="cardInfoText">R$ <span id="totalMoney">0.00</span></p>
+        </div>
+      </section>
+      <section id="listSection">
+        <div>
+          <a onclick="openModal()">+ Adicionar pessoas à fila</a>
+        </div>
+        <ul id="clientList"></ul>
+      </section>
+    </main>
+    <footer>
+      <p>Com 💛 InfoJr <span id="currentYear">2022</span></p>
+    </footer>
+    <script src="./script.js"></script>
+  </body>
+</html>
